@@ -8,7 +8,7 @@
 
 ## Description
 Comedy search engine with features including comedians podcasts and tour dates.
-- Technologies used: Django, Python, Vue, Vite, spaCy, Elasticsearch, Google Cloud Platform
+- Technologies used: Django, Python, Vite/Vue, spaCy, Elasticsearch, Google Cloud Platform
 
 ## Models
 
