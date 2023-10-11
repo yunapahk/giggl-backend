@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from django.conf import settings             # <-- Added
+from django.conf.urls.static import static   # <-- Added
 
 # Assuming you have ViewSets set up for each model in their respective apps
 from bits.views import BitViewSet
@@ -21,3 +23,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path("admin/", admin.site.urls),
 ]
+
+# Serving media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
