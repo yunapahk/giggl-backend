@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "ilovemydog")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['giggl-backend-d1dba8cb813e.herokuapp.com']
+ALLOWED_HOSTS = ['giggl-75d300d66618.herokuapp.com']
 
 ## Handling Allowed Hosts on Render
 ## add the render.com hostname to ALLOWED_HOSTS
