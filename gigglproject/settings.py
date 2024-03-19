@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "ilovemydog")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['giggl-75d300d66618.herokuapp.com']
+ALLOWED_HOSTS = ['giggl-75d300d66618.herokuapp.com', '127.0.0.1']
 
 ## Handling Allowed Hosts on Render
 ## add the render.com hostname to ALLOWED_HOSTS
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'bits',
     'podcasts',
     'comedians',
@@ -71,13 +72,13 @@ ROOT_URLCONF = 'gigglproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.contrib.auth.context_processors.auth',  
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -136,6 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media files (Uploaded by users, such as images)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Login Redirect
+LOGIN_REDIRECT_URL = 'https://giggl-delta.vercel.app/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -1,10 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from django.conf import settings             # <-- Added
-from django.conf.urls.static import static   # <-- Added
+from django.conf import settings          
+from django.conf.urls.static import static   
+from django.contrib.auth import views as accounts_views
 
-# Assuming you have ViewSets set up for each model in their respective apps
+from accounts.views import SignupView, profile_view
 from bits.views import BitViewSet
 from comedians.views import ComedianViewSet
 from podcasts.views import PodcastViewSet
@@ -22,6 +23,10 @@ router.register(r"tourdates", TourdateViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path("admin/", admin.site.urls),
+    path('signup/', SignupView.as_view(), name='signup'),
+    path('login/', accounts_views.LoginView.as_view(), name='login'),
+    path('logout/', accounts_views.LogoutView.as_view(), name='logout'),
+    path('profile/', profile_view, name='profile')
 ]
 
 # Serving media files in development
