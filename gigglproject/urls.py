@@ -3,9 +3,9 @@ from django.urls import path, include
 from rest_framework import routers
 from django.conf import settings          
 from django.conf.urls.static import static   
-from django.contrib.auth import views as accounts_views
+# from django.contrib.auth import views as accounts_views
 
-from accounts.views import SignupView, profile_view
+from accounts.views import SignupView, LoginView, LogoutView
 from bits.views import BitViewSet
 from comedians.views import ComedianViewSet
 from podcasts.views import PodcastViewSet
@@ -24,9 +24,8 @@ urlpatterns = [
     path('', include(router.urls)),
     path("admin/", admin.site.urls),
     path('signup/', SignupView.as_view(), name='signup'),
-    path('login/', accounts_views.LoginView.as_view(template_name='templates/login.html'), name='login'),
-    path('logout/', accounts_views.LogoutView.as_view(template_name='templates/logout.html'), name='logout'),
-    path('profile/', profile_view, name='profile')
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
 
 # Serving media files in development
