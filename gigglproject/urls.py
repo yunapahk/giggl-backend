@@ -3,7 +3,8 @@ from django.urls import path, include
 from rest_framework import routers
 from django.conf import settings          
 from django.conf.urls.static import static   
-# from django.contrib.auth import views as accounts_views
+from accounts.views import ToggleSuperuserStatus
+from accounts.views import ProfileView
 
 from accounts.views import SignupView, LoginView, LogoutView
 from bits.views import BitViewSet
@@ -26,6 +27,8 @@ urlpatterns = [
     path('signup/', SignupView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('toggle_superuser/<int:user_id>/', ToggleSuperuserStatus.as_view(), name='toggle_superuser'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]
 
 # Serving media files in development
