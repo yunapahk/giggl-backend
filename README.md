@@ -1,6 +1,6 @@
 ### Giggl
 
-[Click here!](https://giggl-delta.vercel.app/) 
+[Click here!](https://giggl-git-main-yunapahk.vercel.app/)
 
 
 Discover laughs with giggl's comedy search engine, showcasing renowned comedians, their latest podcasts, and upcoming tour dates.
@@ -8,7 +8,7 @@ Discover laughs with giggl's comedy search engine, showcasing renowned comedians
 
 - Technologies used: Django, Python, Vite/Vue
 
-- [Backend](https://giggl-backend-d1dba8cb813e.herokuapp.com/)
+- [Backend](giggl-75d300d66618.herokuapp.com/)
 
 - [Trello Board](https://trello.com/invite/b/xYyOnwr0/ATTI8f7dcb8c3ad62cb3b70f0af151eec366A63335A2/giggl)
 
